@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Video - Umbrellable Videos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Upload Video</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/upload">Upload Video</a>
+        <a href="/delete">Delete Video</a>
+    </nav>
+
+    <div class="form-container">
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <label for="title">Video Title:</label>
+            <input type="text" id="title" name="title" required maxlength="20"><br>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required maxlength="100"><br>
+            <label for="video">Video File:</label>
+            <input type="file" id="video" name="video" accept="video/*" required><br>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = '/'; // Redirect to home page
+                } else {
+                    return response.text().then(text => alert(text));
+                }
+            }).catch(error => alert('Upload failed: ' + error.message));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+[debug] [2024-09-03T20:12:52.641Z] ----------------------------------------------------------------------
+[debug] [2024-09-03T20:12:52.643Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\simmo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-09-03T20:12:52.644Z] CLI Version:   13.16.0
+[debug] [2024-09-03T20:12:52.644Z] Platform:      win32
+[debug] [2024-09-03T20:12:52.644Z] Node Version:  v20.17.0
+[debug] [2024-09-03T20:12:52.644Z] Time:          Tue Sep 03 2024 16:12:52 GMT-0400 (Eastern Daylight Time)
+[debug] [2024-09-03T20:12:52.644Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-03T20:12:52.650Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-03T20:12:52.650Z] > authorizing via signed-in user (masonfrom2012@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\simmo\OneDrive\Desktop\Umbrellable Videos
+

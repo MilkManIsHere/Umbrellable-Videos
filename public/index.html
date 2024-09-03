@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Umbrellable Videos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Home</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/upload">Upload Video</a>
+        <a href="/delete">Delete Video</a>
+    </nav>
+
+    <div class="video-list" id="video-list">
+        <!-- Videos will be displayed here by JavaScript -->
+    </div>
+
+    <script>
+        fetch('/videos')
+            .then(response => response.json())
+            .then(videos => {
+                const videoList = document.getElementById('video-list');
+                videoList.innerHTML = ''; // Clear existing content
+                videos.forEach(video => {
+                    const videoItem = document.createElement('div');
+                    videoItem.className = 'video-item';
+                    videoItem.innerHTML = `
+                        <h3>${video.title}</h3>
+                        <p>${video.description}</p>
+                        <video controls width="600">
+                            <source src="${video.videoUrl}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    `;
+                    videoList.appendChild(videoItem);
+                });
+            });
+    </script>
+</body>
+</html>
